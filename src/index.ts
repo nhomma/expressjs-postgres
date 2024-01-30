@@ -20,7 +20,8 @@ app.get("/", async (req, res) => {
 
 app.get("/student", async (req, res) => {
   const { rows } = await pool.query("select * from student");
-  res.send(`Hello, World! The first name the student table is ${rows[0].name}`);
+  //res.send(`Hello, World! The first name the student table is ${rows[0].name}`);
+  res.json(rows);
 });
 
 app.listen(port, () => {
